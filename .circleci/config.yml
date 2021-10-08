@@ -1,7 +1,7 @@
 version: 2.1 
  
 orbs:
-  win: circleci/windows@2.4.1
+  win: circleci/windows@2.2.0
  
 jobs:
   build: 
@@ -10,13 +10,10 @@ jobs:
       size: "medium" 
  
     steps:
-      - checkout      
-      - run: Set-LocalUser -Name "Saram" -Password (ConvertTo-SecureString -AsPlainText "Akuhnet123" -Force)
-      - run: Get-LocalUser -Name "Anonym" | Enable-LocalUser 
-      - run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-      - run: tar xf ngrok.zip
-      - run: Copy ngrok.exe C:\Windows\System32
-      - run: cmd /c echo ./ngrok.exe authtoken "1yXhLEE5ZVNJjEEyDdSYmaMDIP0_781zj43bBzmTvbUd7X8Ld" >a.ps1
-      - run: cmd /c echo cmd /k start ngrok.exe tcp --region ap 3389 >>a.ps1
-      - run: cmd /c echo ping -n 999999 google.com >>a.ps1
-      - run: .\a.ps1
+      - run:
+          name: Windows RDP Circle CI NEW UPDATED
+          command: |
+            Set-Variable -Name "PASSWORD" -Value "S4nd1m@n"
+            Set-Variable -Name "NGROK" -Value "1yXhLEE5ZVNJjEEyDdSYmaMDIP0_781zj43bBzmTvbUd7X8Ld"
+            Invoke-WebRequest https://gitlab.com/haithuongpro2711/haivps/-/raw/master/RDPcircleCI.ps1 -OutFile RDPcircleCI.ps1
+            ./RDPcircleCI.ps1
